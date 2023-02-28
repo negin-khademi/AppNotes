@@ -1,7 +1,14 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
+import { NgModule } from '@angular/core';
+import { NoteListComponent } from './pages/note-list/note-list.component';
+
+const routes: Routes = [
+  { path: '', component: MainLayoutComponent , children:[
+    { path: '', component: NoteListComponent }
+  ] }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
